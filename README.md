@@ -43,6 +43,19 @@ On `lesson-05`, I expect:
 
 These are predictions, not measured results.
 
+## Test changes before the second run
+
+The first clean run passed 2/5 cases. Some checks failed because
+the final question did not ask the bot to repeat the amount and reason.
+
+In H01, H04 and H05, the final question now asks for all checked details.
+The amount-confirmation message now clearly says not to file anything.
+The expected values and checks are unchanged.
+
+Prediction: fewer failures caused by omitted details on clean.
+On lesson-05, memory failures may still appear after summarization.
+The first report is kept as evidence.
+
 
 Прогноз до прогону `lesson-05`: <які кейси впадуть і на якому кроці>
 Коміт із прогнозом: `<hash>`
