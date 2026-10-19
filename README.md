@@ -1,27 +1,45 @@
 # L05 · Multi-turn Test Plan — PayPilot
 
 
-## Запуск
-Покладіть `l05_dialogs.jsonl` у `~/paypilot/l03/sets/` і виконайте:
+## Run
+
+Copy `l05_dialogs.jsonl` into:
+`C:\Users\YJukova\paypilot-l05-eval\sets`
+
+Run from `C:\Users\YJukova\paypilot-l05-eval`:
+
+```powershell
+docker compose run --rm eval --set l05_dialogs --dry-run
+docker compose run --rm eval --set l05_dialogs --profile clean --traces
+docker compose run --rm eval --set l05_dialogs --profile lesson-05 --traces
+```
+
+Final set hash: `6526568fcdaa`
 
 
-    docker compose run --rm eval --set l05_dialogs --profile clean
+## Dialogue cases
+
+Each case runs five times on each profile.
+All cases check the amount and reason code.
+
+| ID | Role | Turns | Tracked fields | Unrelated topic blocks |
+|---|---|---:|---:|---:|
+| CONV-H01 | Main scenario | 7 | 4 | 2 |
+| CONV-H02 | Shorter version | 5 | 4 | 2 |
+| CONV-H03 | Two-field draft | 7 | 2 | 2 |
+| CONV-H04 | Longer version | 10 | 4 | 3 |
+| CONV-H05 | Control without summarization | 7 | 4 | 2 |
 
 
-`set_hash`: <12 символів>
+## Final results
+| Profile | Cases passed | Individual runs passed | Report |
+|---|---:|---:|---|
+| clean | 5/5 | 25/25 | `reports/l05_dialogs-clean-20261018T232124.json` |
+| lesson-05 | 0/5 | 5/25 | `reports/l05_dialogs-lesson-05-20261018T233426.json` |
 
-
-## Діалогові кейси
-| id | Роль у плані | Довжина · сутності · перемикання | Інваріанти |
-| --- | --- | --- | --- |
-| | | | |
-
-
-## Прогони
-| Прогін | Профіль | Результат | Звіт |
-| --- | --- | --- | --- |
-| Baseline | `clean` | <N/M> | `reports/…` |
-| Профіль заняття | `lesson-05` | <N/M> | `reports/…` |
+H05 had one false alarm: the wording check matched a sentence
+about review times. The bot still knew the correct transaction,
+amount and reason. The automatic results above are unchanged.
 
 ## Prediction before the HW test runs
 
@@ -57,6 +75,11 @@ On lesson-05, memory failures may still appear after summarization.
 The first report is kept as evidence.
 
 
-Прогноз до прогону `lesson-05`: <які кейси впадуть і на якому кроці>
-Коміт із прогнозом: `<hash>`
-Що впало: <id>. Розбіжність із прогнозом: <чим пояснюється або «немає»>
+## Comparison with the prediction
+
+Original prediction commit: `00f1361`.
+
+The updated clean set passed as expected.
+H01–H04 showed failures on lesson-05, as expected.
+H05's automatic failure was caused by our check, not demonstrated memory loss.
+
