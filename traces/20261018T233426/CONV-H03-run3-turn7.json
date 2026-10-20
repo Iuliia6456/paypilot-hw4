@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H03",
+  "run": 3,
+  "turn": 7,
+  "user": "Give me the final draft details: the amount and reason code only. Do not file anything.",
+  "answer": "Here are the draft details. Nothing has been filed.\n\n- **Amount:** EUR 240.00\n- **Reason code:** Not yet settled. The draft currently lists service_not_rendered, but that code applies to services, not goods. Your complaint is about goods that were never delivered, so the likely code is **goods_not_received**. If you were charged twice for the same order, the code is **duplicate_charge** instead.\n\nPlease confirm which code applies and which transaction (TX-0401 or TX-0402) the complaint covers. I'll then check eligibility before anything is filed.",
+  "trace": {
+    "request_id": "57033b72cfa74af8",
+    "name": "agent.request",
+    "span_id": "339f0e7efcbc457d",
+    "started_at": 1792366855.980691,
+    "ended_at": 1792366859.7585394,
+    "duration_ms": 3777.8,
+    "attributes": {
+      "session.id": "269cec424f06",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4701,
+      "gen_ai.usage.total_output_tokens": 709
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "78478f2cc2ff408e",
+        "started_at": 1792366855.9813006,
+        "ended_at": 1792366859.7585137,
+        "duration_ms": 3777.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4701,
+          "gen_ai.usage.output_tokens": 709
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H04",
+  "run": 5,
+  "turn": 8,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "To proceed, I need your explicit confirmation to open the dispute:\n\n- **Transaction:** TX-0401\n- **Amount:** EUR 180.00\n- **Reason code:** service_not_rendered (goods not received)\n\nThe eligibility check for this transaction passed, so I can submit it once you confirm. Please reply \"yes\" or tell me if you want to change anything first.",
+  "trace": {
+    "request_id": "017122efea674ce8",
+    "name": "agent.request",
+    "span_id": "f15913660c7b4f7d",
+    "started_at": 1792367134.2376895,
+    "ended_at": 1792367137.3419213,
+    "duration_ms": 3104.2,
+    "attributes": {
+      "session.id": "ccf4ca90edde",
+      "dialog.step_number": 8,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6907,
+      "gen_ai.usage.total_output_tokens": 499
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "fb132436d0fb401f",
+        "started_at": 1792367134.2381356,
+        "ended_at": 1792367137.3418822,
+        "duration_ms": 3103.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6907,
+          "gen_ai.usage.output_tokens": 499
+        },
+        "children": []
+      }
+    ]
+  }
+}

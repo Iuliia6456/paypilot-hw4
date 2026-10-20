@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H05",
+  "run": 3,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "You can file the dispute now. I haven't opened it yet, because \"Fine\" could mean several things and filing can't be undone.\n\n**What happens if you confirm:**\n1. I open a goods_not_received dispute on TX-0401 for EUR 240.00.\n2. The dispute is reviewed. The review target is 10 business days for card reason codes and 20 business days for transfer reason codes. I haven't confirmed which applies to this payment.\n3. Complex cases involving a foreign acquirer can take up to 45 calendar days, and you would be notified if that happens.\n\n**To proceed,** reply \"yes, open the dispute for TX-0401.\" If you'd rather not file yet, the dispute remains available until 2026-10-18.",
+  "trace": {
+    "request_id": "3523a8072caf42b0",
+    "name": "agent.request",
+    "span_id": "7681a73257da47e2",
+    "started_at": 1792367202.1732955,
+    "ended_at": 1792367205.6065874,
+    "duration_ms": 3433.3,
+    "attributes": {
+      "session.id": "5afba405e1a2",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5214,
+      "gen_ai.usage.total_output_tokens": 542
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "40521c65c9384341",
+        "started_at": 1792367202.1736956,
+        "ended_at": 1792367205.606569,
+        "duration_ms": 3432.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5214,
+          "gen_ai.usage.output_tokens": 542
+        },
+        "children": []
+      }
+    ]
+  }
+}

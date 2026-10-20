@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H04",
+  "run": 5,
+  "turn": 10,
+  "user": "Do I still have time to file? Please repeat the transaction ID, dispute amount, reason code and filing deadline. Do not file anything.",
+  "answer": "Yes, you still have time. The eligibility check is valid as of 2026-09-15, and the deadline is **2026-10-18**.\n\n- **Transaction ID:** TX-0401\n- **Dispute amount:** EUR 240.00\n- **Reason code:** goods_not_received\n- **Filing deadline:** 2026-10-18\n\nNothing has been filed. I'll open the dispute only after you confirm these details.",
+  "trace": {
+    "request_id": "8a6e5db50ec2460a",
+    "name": "agent.request",
+    "span_id": "ed76e0d0e54f4f10",
+    "started_at": 1792367147.8985686,
+    "ended_at": 1792367149.6236906,
+    "duration_ms": 1725.1,
+    "attributes": {
+      "session.id": "ccf4ca90edde",
+      "dialog.step_number": 10,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8086,
+      "gen_ai.usage.total_output_tokens": 262
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "79b01b00c5f4411c",
+        "started_at": 1792367147.898912,
+        "ended_at": 1792367149.6236668,
+        "duration_ms": 1724.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 8086,
+          "gen_ai.usage.output_tokens": 262
+        },
+        "children": []
+      }
+    ]
+  }
+}

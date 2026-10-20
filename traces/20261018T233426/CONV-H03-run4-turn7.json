@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H03",
+  "run": 4,
+  "turn": 7,
+  "user": "Give me the final draft details: the amount and reason code only. Do not file anything.",
+  "answer": "Here are the draft details. Nothing has been filed.\n\n- **Amount:** EUR 240.00. This matches TX-0402 (14 July 2026) and TX-0401 (20 July 2026), both to TechMart Online.\n- **Reason code:** `goods_not_received`. This is the code that fits a payment for goods that never arrived. I can't verify the exact code from our earlier draft, so please treat this as the proposed code, not a confirmed one.\n\nBefore anything is submitted, you need to pick the transaction (TX-0402 or TX-0401), and I'll check its eligibility under this code.",
+  "trace": {
+    "request_id": "00beb3be0fe14281",
+    "name": "agent.request",
+    "span_id": "2bf59b9b5f5b4af7",
+    "started_at": 1792366885.2179756,
+    "ended_at": 1792366888.4216776,
+    "duration_ms": 3203.7,
+    "attributes": {
+      "session.id": "ba04dc3d298d",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5299,
+      "gen_ai.usage.total_output_tokens": 491
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5d955845763b44f0",
+        "started_at": 1792366885.2185743,
+        "ended_at": 1792366888.4216387,
+        "duration_ms": 3203.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5299,
+          "gen_ai.usage.output_tokens": 491
+        },
+        "children": []
+      }
+    ]
+  }
+}

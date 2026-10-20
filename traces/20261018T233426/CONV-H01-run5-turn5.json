@@ -1,0 +1,113 @@
+{
+  "case": "CONV-H01",
+  "run": 5,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "Your recent transactions show two settled card payments to **TechMart Online**, both EUR 240.00:\n\n- **TX-0401**, 20 July 2026\n- **TX-0402**, 14 July 2026\n\nWhich one is the charge for goods that never arrived? Once you tell me, I'll check its dispute eligibility under the goods-not-received category. If it is eligible, I'll show you the details and open the dispute only after you explicitly confirm.",
+  "trace": {
+    "request_id": "a11dbf63bd034bd0",
+    "name": "agent.request",
+    "span_id": "ad3f535b056a4f9d",
+    "started_at": 1792366630.044213,
+    "ended_at": 1792366636.3176491,
+    "duration_ms": 6273.4,
+    "attributes": {
+      "session.id": "d4478fdad2de",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 9467,
+      "gen_ai.usage.total_output_tokens": 1014
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "0f360119fd9442cc",
+        "started_at": 1792366630.0448565,
+        "ended_at": 1792366632.3326502,
+        "duration_ms": 2287.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4551,
+          "gen_ai.usage.output_tokens": 362
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_transactions",
+        "span_id": "deac34a384b54a4f",
+        "started_at": 1792366632.3327367,
+        "ended_at": 1792366632.3337152,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "get_transactions",
+          "tool.arguments": {
+            "account_id": "ACC-1005",
+            "limit": 20
+          },
+          "tool.result": {
+            "transactions": [
+              {
+                "id": "TX-0403",
+                "account_id": "ACC-1005",
+                "date": "2026-09-01",
+                "amount": 35.5,
+                "currency": "EUR",
+                "merchant": "CityParking",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0401",
+                "account_id": "ACC-1005",
+                "date": "2026-07-20",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0402",
+                "account_id": "ACC-1005",
+                "date": "2026-07-14",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "5a603018bdae4166",
+        "started_at": 1792366632.333829,
+        "ended_at": 1792366636.317589,
+        "duration_ms": 3983.8,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4916,
+          "gen_ai.usage.output_tokens": 652
+        },
+        "children": []
+      }
+    ]
+  }
+}

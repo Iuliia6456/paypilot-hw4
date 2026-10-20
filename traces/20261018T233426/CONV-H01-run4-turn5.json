@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H01",
+  "run": 4,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "The dispute is ready to file, but I need your explicit go-ahead first because it can't be undone once submitted.\n\n**Where things stand:**\n- **Reason code:** `service_not_rendered` (goods paid for but not received)\n- **Eligibility:** Passed all checks, and the dispute window is still open.\n- **Amount:** The full amount of the transaction we discussed.\n\n**Next step:** Reply \"yes\" or \"file it,\" and I'll open the dispute under that reason code. If you'd rather hold off, tell me and I won't file anything.",
+  "trace": {
+    "request_id": "fc4dad3ef4574ae2",
+    "name": "agent.request",
+    "span_id": "4bcf454e98584eb1",
+    "started_at": 1792366592.8471725,
+    "ended_at": 1792366597.0327806,
+    "duration_ms": 4185.6,
+    "attributes": {
+      "session.id": "df3229954da3",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4251,
+      "gen_ai.usage.total_output_tokens": 680
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "353b0c354ee74f09",
+        "started_at": 1792366592.8474863,
+        "ended_at": 1792366597.0327625,
+        "duration_ms": 4185.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 4251,
+          "gen_ai.usage.output_tokens": 680
+        },
+        "children": []
+      }
+    ]
+  }
+}

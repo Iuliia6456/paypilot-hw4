@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H05",
+  "run": 3,
+  "turn": 6,
+  "user": "240 euro, as I said at the start. This only confirms the amount. Do not file anything.",
+  "answer": "Understood. The amount is EUR 240.00, which matches TX-0401. I won't open the dispute, and nothing has been filed.\n\nThe dispute remains available for goods_not_received until 2026-10-18. When you're ready, tell me to open it and I'll run the eligibility check again before filing.",
+  "trace": {
+    "request_id": "67bfe21d0e7047ea",
+    "name": "agent.request",
+    "span_id": "cbf5561743114bb8",
+    "started_at": 1792367205.6128616,
+    "ended_at": 1792367207.5321927,
+    "duration_ms": 1919.3,
+    "attributes": {
+      "session.id": "5afba405e1a2",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5481,
+      "gen_ai.usage.total_output_tokens": 224
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "694be625d4cc46b0",
+        "started_at": 1792367205.6131492,
+        "ended_at": 1792367207.5321734,
+        "duration_ms": 1919.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5481,
+          "gen_ai.usage.output_tokens": 224
+        },
+        "children": []
+      }
+    ]
+  }
+}

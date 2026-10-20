@@ -1,0 +1,131 @@
+{
+  "case": "CONV-H04",
+  "run": 5,
+  "turn": 6,
+  "user": "How long does a SWIFT transfer take?",
+  "answer": "I couldn't find a processing time for SWIFT transfers in the knowledge base. The only related details are that a transfer rejected by the beneficiary bank is returned within five business days, and fees on a returned SWIFT transfer are not refunded.\n\nFor the expected delivery time, I can escalate to a human agent who can confirm it.",
+  "trace": {
+    "request_id": "a0c6235aaffa4314",
+    "name": "agent.request",
+    "span_id": "08b864a8810146d4",
+    "started_at": 1792367129.9623997,
+    "ended_at": 1792367132.1325378,
+    "duration_ms": 2170.1,
+    "attributes": {
+      "session.id": "ccf4ca90edde",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "anthropic",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 11384,
+      "gen_ai.usage.total_output_tokens": 174
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5a47babd3e5d44ed",
+        "started_at": 1792367129.9629571,
+        "ended_at": 1792367130.9123561,
+        "duration_ms": 949.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 5356,
+          "gen_ai.usage.output_tokens": 67
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "332f8a3fa8ba4977",
+        "started_at": 1792367130.9124212,
+        "ended_at": 1792367130.9132943,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "SWIFT transfer processing time delivery duration"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "SWIFT transfer processing time delivery duration",
+            "fragments": [
+              {
+                "id": "transfers.md#s4",
+                "doc": "transfers.md",
+                "score": 0.5774,
+                "text": "Transfers\n## Failed transfers\nA transfer rejected by the beneficiary bank is returned within five business\ndays. Fees already charged on a returned SWIFT transfer are not refunded."
+              },
+              {
+                "id": "tariffs.md#s3",
+                "doc": "tariffs.md",
+                "score": 0.5714,
+                "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |\n| SWIFT | EUR 15.00 | 0.3% |\n| Card payment | EUR 0.00 | 1.2% |\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
+              },
+              {
+                "id": "fees-detail.md#s1",
+                "doc": "fees-detail.md",
+                "score": 0.4629,
+                "text": "Fee details\n## How the SWIFT fee is composed\nA SWIFT transfer carries a flat fee plus a percentage of the EUR equivalent of\nthe amount sent. Correspondent bank charges deducted en route are outside the\ncontrol of Verta and are not refunded."
+              },
+              {
+                "id": "notifications.md#s5",
+                "doc": "notifications.md",
+                "score": 0.4082,
+                "text": "Notifications\n## Delivery failures\nIf the registered email bounces three times the address is marked unverified\nand statement delivery is suspended until it is corrected."
+              }
+            ]
+          },
+          "retrieval.query": "SWIFT transfer processing time delivery duration",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "transfers.md#s4",
+              "score": 0.5774,
+              "text": "Transfers\n## Failed transfers\nA transfer rejected by the beneficiary bank is returned within five business\ndays. Fees already charged on a returned SWIFT transf"
+            },
+            {
+              "id": "tariffs.md#s3",
+              "score": 0.5714,
+              "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |"
+            },
+            {
+              "id": "fees-detail.md#s1",
+              "score": 0.4629,
+              "text": "Fee details\n## How the SWIFT fee is composed\nA SWIFT transfer carries a flat fee plus a percentage of the EUR equivalent of\nthe amount sent. Correspondent bank "
+            },
+            {
+              "id": "notifications.md#s5",
+              "score": 0.4082,
+              "text": "Notifications\n## Delivery failures\nIf the registered email bounces three times the address is marked unverified\nand statement delivery is suspended until it is "
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4e8c4205123d4f93",
+        "started_at": 1792367130.9134119,
+        "ended_at": 1792367132.132512,
+        "duration_ms": 1219.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "claude-haiku-5-5",
+          "gen_ai.usage.input_tokens": 6028,
+          "gen_ai.usage.output_tokens": 107
+        },
+        "children": []
+      }
+    ]
+  }
+}
